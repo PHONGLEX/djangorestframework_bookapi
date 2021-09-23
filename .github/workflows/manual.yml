@@ -47,7 +47,7 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         env:
           ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
-          ECR_REPOSITORY: django-rest-framework
+          ECR_REPOSITORY: djangorestframework-book-api
           IMAGE_TAG: ${{ steps.tag-number.outputs.tag }}
         run: |
           docker build -t djangorestframework_bookapi .
