@@ -48,7 +48,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
           ECR_REPOSITORY: djangorestframework-book-api
-          IMAGE_TAG: ${{ steps.tag-number.outputs.tag }}
+          IMAGE_TAG: latest
         run: |
           docker build -t djangorestframework_bookapi .
           docker tag djangorestframework_bookapi:latest $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
