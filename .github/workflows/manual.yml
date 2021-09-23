@@ -34,6 +34,9 @@ jobs:
           echo EMAIL_PORT=${{secrets.EMAIL_PORT}} >> .env
           echo EMAIL_HOST=${{secrets.EMAIL_HOST}} >> .env
           echo DEFAULT_FROM_EMAIL=${{secrets.DEFAULT_FROM_EMAIL}} >> .env
+          echo AWS_ACCESS_KEY_ID_S3=${{secrets.AWS_ACCESS_KEY_ID_S3}} >> .env
+          echo AWS_SECRET_ACCESS_KEY_S3=${{secrets.AWS_SECRET_ACCESS_KEY_S3}} >> .env
+          echo AWS_STORAGE_BUCKET_NAME=${{secrets.AWS_STORAGE_BUCKET_NAME}} >> .env
       - name: Set Tag Number
         id: tag-number
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
